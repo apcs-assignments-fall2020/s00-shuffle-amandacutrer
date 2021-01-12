@@ -20,18 +20,20 @@ public class MyMain {
 
     // Shuffles an array, using the selection shuffle algorithm
     public static int[] selectionShuffle(int[] arr) {
+        int[] arr2 = new int[arr.length];
+        arr2 = arr;
         for (int i = 0; i < arr.length; i++){
             int random = (int)(Math.random()*arr.length);
             int temp = arr[i];
-            arr[i] = arr[random];
-            arr[random] = arr[temp];
+            arr2[i] = arr2[random];
+            arr2[random] = temp;
         } 
-        return arr;
+        return arr2;
     }
 
 
     public static void main(String[] args) {
-        int[] test = {1, 2, 3, 4, 5, 6, 7,8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24};
+        int[] test = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24};
         System.out.println(Arrays.toString(perfectShuffle(test)));
         System.out.println(Arrays.toString(selectionShuffle(test)));
     }
